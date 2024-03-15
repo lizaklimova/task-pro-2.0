@@ -1,0 +1,172 @@
+{
+  "developers": [
+    {
+      "id": 1,
+      "name": {
+        "en": "Elizabeth Klymova",
+        "uk": "Єлизавета Климова"
+      },
+      "photo": "./images/Elizabeth.jpg",
+      "LinkedIn": "https://www.linkedin.com/in/elizabeth-klymova-frontend-dev/",
+      "GitHub": "https://github.com/lizaklimova",
+      "role": {
+        "en": "Team Lead (Frontend)",
+        "uk": "Team Lead (Frontend)"
+      }
+    },
+    {
+      "id": 2,
+      "name": {
+        "en": "Anton Chan",
+        "uk": "Антон Чан"
+      },
+      "photo": "./images/Anton.jpg",
+      "LinkedIn": "https://www.linkedin.com/in/chanankuan/",
+      "GitHub": "https://github.com/chanankuan",
+      "role": {
+        "en": "Team Lead (Backend)",
+        "uk": "Team Lead (Backend)"
+      }
+    },
+    {
+      "id": 3,
+      "name": {
+        "en": "Iryna Slavinska",
+        "uk": "Ірина Славінська"
+      },
+      "photo": "./images/Iryna.jpg",
+      "LinkedIn": "https://www.linkedin.com/in/slavinska-iryna/",
+      "GitHub": "https://github.com/IrynaSlavinska",
+      "role": {
+        "en": "Scrum Master",
+        "uk": "Scrum Master"
+      }
+    },
+    {
+      "id": 4,
+      "name": {
+        "en": "Alisa Bondarenko",
+        "uk": "Аліса Бондаренко"
+      },
+      "photo": "./images/Alisa.jpg",
+      "LinkedIn": "https://www.linkedin.com/in/alisa-bondarenko/",
+      "GitHub": "https://github.com/AliceBondMe",
+      "role": {
+        "en": "Developer",
+        "uk": "Розробник"
+      }
+    },
+    {
+      "id": 5,
+      "name": {
+        "en": "Anastasiia Motsukh",
+        "uk": "Анастасія Моцух"
+      },
+      "photo": "./images/Anastasiia.jpg",
+      "LinkedIn": "https://www.linkedin.com/in/anastasiia-motsukh-a5859b283/",
+      "GitHub": "https://github.com/Elostay",
+      "role": {
+        "en": "Developer",
+        "uk": "Розробник"
+      }
+    },
+    {
+      "id": 6,
+      "name": {
+        "en": "Denys Nalyvaiko",
+        "uk": "Денис Наливайко"
+      },
+      "photo": "./images/Denys.jpg",
+      "LinkedIn": "https://www.linkedin.com/in/denys-nalyvaiko-1ba8ab283",
+      "GitHub": "https://github.com/Denys-Nalyvaiko",
+      "role": {
+        "en": "Developer",
+        "uk": "Розробник"
+      }
+    },
+    {
+      "id": 7,
+      "name": {
+        "en": "Ihor Pozhematkin",
+        "uk": "Ігор Пожематкін"
+      },
+      "photo": "./images/Ihor.jpg",
+      "LinkedIn": "https://www.linkedin.com/in/ihor-pozhematkin/",
+      "GitHub": "https://github.com/IhorPozhematkin",
+      "role": {
+        "en": "Developer",
+        "uk": "Розробник"
+      }
+    },
+    {
+      "id": 8,
+      "name": {
+        "en": "Kateryna Lubenets",
+        "uk": "Катерина Лубенець"
+      },
+      "photo": "./images/Kateryna.jpg",
+      "LinkedIn": "https://www.linkedin.com/in/lubenets-kateryna/",
+      "GitHub": "https://github.com/dn280786lea",
+      "role": {
+        "en": "Developer",
+        "uk": "Розробник"
+      }
+    },
+    {
+      "id": 9,
+      "name": {
+        "en": "Konstantin Lysenko",
+        "uk": "Костянтин Лисенко"
+      },
+      "photo": "./images/Konstantin.jpg",
+      "LinkedIn": "https://www.linkedin.com/in/constantine-it-lysenko/",
+      "GitHub": "https://github.com/konstantin-it-lysenko",
+      "role": {
+        "en": "Developer",
+        "uk": "Розробник"
+      }
+    },
+    {
+      "id": 10,
+      "name": {
+        "en": "Nadiia Paliichuk",
+        "uk": "Надія Палійчук"
+      },
+      "photo": "./images/Nadiia.jpg",
+      "LinkedIn": "https://www.linkedin.com/in/nadiia-paliichuk/",
+      "GitHub": "https://github.com/Nadin2611",
+      "role": {
+        "en": "Developer",
+        "uk": "Розробник"
+      }
+    },
+    {
+      "id": 11,
+      "name": {
+        "en": "Serhii Havrilyk",
+        "uk": "Сергій Гаврилюк"
+      },
+      "photo": "./images/Serhii.jpg",
+      "LinkedIn": "https://www.linkedin.com/in/havryliuk-serhii-frontenddeveloper/",
+      "GitHub": "https://github.com/Serhii-Ruhtik",
+      "role": {
+        "en": "Developer",
+        "uk": "Розробник"
+      }
+    },
+    {
+      "id": 12,
+      "name": {
+        "en": "Valentyna Dumbrava",
+        "uk": "Валентина Думбрава"
+      },
+      "photo": "./images/Valentyna.jpg",
+      "LinkedIn": "https://www.linkedin.com/in/valentyna-dumbrava/",
+      "GitHub": "https://github.com/valyadum",
+      "role": {
+        "en": "Developer",
+        "uk": "Розробник"
+      }
+    }
+  ]
+}
