@@ -1,7 +1,7 @@
 import axios from 'axios';
 import ENDPOINTS from './endpoints';
 
-const baseURL = 'https://task-pro-3a4o.onrender.com';
+const baseURL = 'https://task-pro-2-0-backend.onrender.com';
 
 const axiosInstance = axios.create({
   withCredentials: true,
