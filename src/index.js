@@ -13,7 +13,7 @@ import '../src/assets/i18/i18';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      <BrowserRouter basename="/task-pro-2.0">
+      <BrowserRouter basename="/">
         <GlobalStyles />
         <App />
       </BrowserRouter>
