@@ -2,13 +2,12 @@ import axios from 'axios';
 import ENDPOINTS from './endpoints';
 
 const baseURL = 'https://task-pro-2-0-backend.onrender.com';
+// const baseURL = 'http://localhost:5050';
 
 const axiosInstance = axios.create({
   baseURL,
 });
-console.log(
-  JSON.parse(localStorage.getItem('persist:auth')).refreshToken?.split('"')[1]
-);
+
 axiosInstance.interceptors.response.use(
   req => {
     return req;
