@@ -10,8 +10,9 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   config => {
+    console.log(config);
     const urlParams = new URLSearchParams(window.location.search);
-
+    console.log(urlParams);
     if (config.method === 'get' && urlParams.size === 2) {
       const accessToken = urlParams.get('token');
       const refreshToken = urlParams.get('refreshToken');
