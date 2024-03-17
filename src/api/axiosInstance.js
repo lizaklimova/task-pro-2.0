@@ -5,6 +5,7 @@ const baseURL = 'https://task-pro-2-0-backend.onrender.com';
 // const baseURL = 'http://localhost:5050';
 
 const axiosInstance = axios.create({
+  withCredentials: true,
   baseURL,
 });
 
@@ -17,10 +18,8 @@ axiosInstance.interceptors.request.use(
       const refreshToken = urlParams.get('refreshToken');
 
       config.headers.Authorization = `Bearer ${accessToken}`;
-      const authObj = JSON.parse(localStorage.getItem('persist:auth'));
-      authObj.refreshToken = refreshToken;
 
-      localStorage.setItem('persist:auth', JSON.stringify(authObj));
+      document.cookie = `refreshToken=${refreshToken}`;
     }
     return config;
   },
@@ -42,15 +41,10 @@ axiosInstance.interceptors.response.use(
       error.config._isRetry = true;
 
       try {
-        const refreshToken =
-          JSON.parse(localStorage.getItem('persist:auth'))?.refreshToken?.split(
-            '"'
-          )[1] ?? null;
-        console.log(refreshToken);
-        const { data } = await axios.post(
+        const { data } = await axios.get(
           `${baseURL}/${ENDPOINTS.auth.refreshToken}`,
           {
-            refreshToken,
+            withCredentials: true,
           }
         );
         console.log(data);
