@@ -19,7 +19,7 @@ axiosInstance.interceptors.request.use(
 
       config.headers.Authorization = `Bearer ${accessToken}`;
 
-      document.cookie = `refreshToken=${refreshToken}`;
+      localStorage.setItem('refreshToken', JSON.stringify(refreshToken));
     }
     return config;
   },
@@ -41,10 +41,17 @@ axiosInstance.interceptors.response.use(
       error.config._isRetry = true;
 
       try {
-        const { data } = await axios.get(
+        const refreshToken =
+          JSON.parse(localStorage.getItem('refreshToken')) ||
+          JSON.parse(localStorage.getItem('persist:auth'))?.refreshToken?.split(
+            '"'
+          )[1] ||
+          null;
+        console.log(refreshToken);
+        const { data } = await axios.post(
           `${baseURL}/${ENDPOINTS.auth.refreshToken}`,
           {
-            withCredentials: true,
+            refreshToken,
           }
         );
         console.log(data);
