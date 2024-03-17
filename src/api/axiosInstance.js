@@ -5,7 +5,6 @@ const baseURL = 'https://task-pro-2-0-backend.onrender.com';
 // const baseURL = 'http://localhost:5050';
 
 const axiosInstance = axios.create({
-  withCredentials: true,
   baseURL,
 });
 
