@@ -8,27 +8,27 @@ const axiosInstance = axios.create({
   baseURL,
 });
 
-axiosInstance.interceptors.request.use(
-  config => {
-    console.log(config);
-    const urlParams = new URLSearchParams(window.location.search);
-    console.log(urlParams);
-    if (config.method === 'get') {
-      const accessToken = urlParams.get('token');
-      const refreshToken = urlParams.get('refreshToken');
+// axiosInstance.interceptors.request.use(
+//   config => {
+//     console.log(config);
+//     const urlParams = new URLSearchParams(window.location.search);
+//     console.log(urlParams);
+//     if (config.method === 'get') {
+//       const accessToken = urlParams.get('token');
+//       const refreshToken = urlParams.get('refreshToken');
 
-      config.headers.Authorization = `Bearer ${accessToken}`;
-      const oldAuthObj = JSON.parse(localStorage.getItem('persist:auth'));
-      const newAuthObj = { ...oldAuthObj, refreshToken };
+//       config.headers.Authorization = `Bearer ${accessToken}`;
+//       const oldAuthObj = JSON.parse(localStorage.getItem('persist:auth'));
+//       const newAuthObj = { ...oldAuthObj, refreshToken };
 
-      localStorage.setItem('persist:auth', JSON.stringify(newAuthObj));
-    }
-    return config;
-  },
-  error => {
-    return Promise.reject(error);
-  }
-);
+//       localStorage.setItem('persist:auth', JSON.stringify(newAuthObj));
+//     }
+//     return config;
+//   },
+//   error => {
+//     return Promise.reject(error);
+//   }
+// );
 
 axiosInstance.interceptors.response.use(
   req => {
