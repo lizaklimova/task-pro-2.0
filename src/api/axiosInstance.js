@@ -13,7 +13,7 @@ axiosInstance.interceptors.request.use(
     console.log(config);
     const urlParams = new URLSearchParams(window.location.search);
     console.log(urlParams);
-    if (config.method === 'GET') {
+    if (config.method === 'get') {
       const accessToken = urlParams.get('token');
       // const refreshToken = urlParams.get('refreshToken');
 
