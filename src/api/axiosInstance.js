@@ -8,6 +8,24 @@ const axiosInstance = axios.create({
   baseURL,
 });
 
+axiosInstance.interceptors.request.use(
+  config => {
+    console.log(config);
+    const urlParams = new URLSearchParams(window.location.search);
+    console.log(urlParams);
+    if (config.method === 'GET') {
+      const accessToken = urlParams.get('token');
+      // const refreshToken = urlParams.get('refreshToken');
+
+      config.headers.Authorization = `Bearer ${accessToken}`;
+    }
+    return config;
+  },
+  error => {
+    return Promise.reject(error);
+  }
+);
+
 axiosInstance.interceptors.response.use(
   req => {
     return req;

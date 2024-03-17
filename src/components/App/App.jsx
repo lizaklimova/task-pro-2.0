@@ -4,7 +4,6 @@ import { useAuth } from 'hooks';
 import { Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { refreshUser } from '../../redux/auth/authOperations';
-import { saveTokens } from '../../redux/auth/authSlice';
 import { PrivateRoute, PublicRoute } from 'routes';
 import SharedLayout from 'layouts/SharedLayout';
 import Loader from 'components/Loader';
@@ -22,14 +21,6 @@ const App = () => {
   const { isRefreshing, isLoading } = useAuth();
 
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const accessToken = urlParams.get('token');
-    const refreshToken = urlParams.get('refreshToken');
-
-    if (accessToken && refreshToken) {
-      saveTokens({ accessToken, refreshToken });
-    }
-
     dispatch(refreshUser());
   }, [dispatch]);
 
