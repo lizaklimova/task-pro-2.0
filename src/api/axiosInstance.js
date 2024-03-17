@@ -12,8 +12,9 @@ axiosInstance.interceptors.request.use(
   config => {
     console.log(config);
     const urlParams = new URLSearchParams(window.location.search);
-    console.log(urlParams);
-    if (config.method === 'get') {
+    // console.log(urlParams);
+    if (config.method === 'get' && !config._isRepeat) {
+      config._isRepeat = true;
       const accessToken = urlParams.get('token');
       const refreshToken = urlParams.get('refreshToken');
 
@@ -27,6 +28,8 @@ axiosInstance.interceptors.request.use(
     return Promise.reject(error);
   }
 );
+
+console.log(JSON.parse(localStorage.getItem('refreshToken')));
 
 axiosInstance.interceptors.response.use(
   req => {
@@ -47,14 +50,14 @@ axiosInstance.interceptors.response.use(
             '"'
           )[1] ||
           null;
-        console.log(refreshToken);
+        // console.log(refreshToken);
         const { data } = await axios.post(
           `${baseURL}/${ENDPOINTS.auth.refreshToken}`,
           {
             refreshToken,
           }
         );
-        console.log(data);
+        // console.log(data);
         axiosInstance.defaults.headers.common.Authorization = `Bearer ${data.user.tokenAccess}`;
 
         return axiosInstance.request(error.config);
