@@ -15,9 +15,13 @@ axiosInstance.interceptors.request.use(
     console.log(urlParams);
     if (config.method === 'get') {
       const accessToken = urlParams.get('token');
-      // const refreshToken = urlParams.get('refreshToken');
+      const refreshToken = urlParams.get('refreshToken');
 
       config.headers.Authorization = `Bearer ${accessToken}`;
+      const oldAuthObj = JSON.parse(localStorage.getItem('persist:auth'));
+      const newAuthObj = { ...oldAuthObj, refreshToken };
+
+      localStorage.setItem('persist:auth', JSON.stringify(newAuthObj));
     }
     return config;
   },
