@@ -11,14 +11,12 @@ const axiosInstance = axios.create({
 axiosInstance.interceptors.request.use(
   config => {
     let urlParams = new URLSearchParams(window.location.search);
-    console.log(urlParams);
-    console.log(window.location.search);
-    if (config.method === 'get' && Object.keys(urlParams).length >= 2) {
-      urlParams = new URLSearchParams(window.location.search);
-      console.log(urlParams);
-      const accessToken = urlParams.get('token');
-      const refreshToken = urlParams.get('refreshToken');
+    const accessToken = urlParams.get('token');
+    const refreshToken = urlParams.get('refreshToken');
+    console.log(urlParams.get('token'));
+    console.log(urlParams.get('dmdmd'));
 
+    if (config.method === 'get' && accessToken && refreshToken) {
       config.headers.Authorization = `Bearer ${accessToken}`;
 
       localStorage.setItem('refreshToken', JSON.stringify(refreshToken));
