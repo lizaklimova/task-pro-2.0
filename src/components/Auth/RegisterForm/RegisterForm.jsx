@@ -153,7 +153,7 @@ const RegisterForm = () => {
               barColors={PROGRESS_BAR_COLORS}
             />
           )}
-          <Google to={'http://localhost:5050/auth/google'}>
+          <Google to={'https://task-pro-2-0-backend.onrender.com/auth/google'}>
             <FcGoogle style={{ width: '28px', height: '28px' }} />
             <span>Register with Google</span>
           </Google>
