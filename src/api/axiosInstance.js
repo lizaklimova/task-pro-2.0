@@ -13,7 +13,7 @@ axiosInstance.interceptors.request.use(
     console.log(config);
     const urlParams = new URLSearchParams(window.location.search);
     // console.log(urlParams);
-    if (config.method === 'get' && !config.headers.Authorization) {
+    if (config.method === 'get' && Object.keys(urlParams).length >= 2) {
       const accessToken = urlParams.get('token');
       const refreshToken = urlParams.get('refreshToken');
 
@@ -27,8 +27,6 @@ axiosInstance.interceptors.request.use(
     return Promise.reject(error);
   }
 );
-
-console.log(JSON.parse(localStorage.getItem('refreshToken')));
 
 axiosInstance.interceptors.response.use(
   req => {
